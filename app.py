@@ -97,9 +97,9 @@ else:
 st.title(":bar_chart: Lakenvlei Catch Reports")
 st.markdown("###")
 size_selection = st.sidebar.slider('Size:',
-                           min_value=(df['Size'].min()), 
-                           max_value=df['Size'].max(),
-                           value = (df['Size'].min(),df['Size'].max()))
+                           min_value=int(df['Size'].min()), 
+                           max_value=int(df['Size'].max()),
+                           value = (int(df['Size'].min()),int(df['Size'].max())))
 st.markdown("###")
 mask = df_events['Size'].between(*size_selection)
 fig_projections = px.histogram(
