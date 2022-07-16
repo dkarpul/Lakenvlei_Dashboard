@@ -24,7 +24,7 @@ def get_wp_trials_data(fname,Event):
 @st.cache
 def get_bol_trials_data():
     df = pd.read_excel(
-            io="Data\Boland_trials_2022.xlsx",
+            io="Data/Boland_trials_2022.xlsx",
             engine="openpyxl",
             sheet_name="Sheet1"
         )
@@ -37,7 +37,7 @@ def get_bol_trials_data():
 @st.cache
 def get_youth_nats(session):
     df = pd.read_excel(
-            io='Data\Session' + str(session) + ' copy.xlsx',
+            io='Data/Session' + str(session) + ' copy.xlsx',
             engine="openpyxl",
             sheet_name="Scores"
         )
@@ -58,8 +58,8 @@ def get_youth_nats_all():
 
 @st.cache
 def get_data_from_excel():
-    WPFFA_2022 = get_wp_trials_data("Data\WPFFA Trial Results 2022-2023 V1.xlsx","WP Trials 2022")
-    WPFFA_2021 = get_wp_trials_data("Data\WPFFA Trial Results 2021-2022 V4.xlsx","WP Trials 2021")
+    WPFFA_2022 = get_wp_trials_data("Data/WPFFA Trial Results 2022-2023 V1.xlsx","WP Trials 2022")
+    WPFFA_2021 = get_wp_trials_data("Data/WPFFA Trial Results 2021-2022 V4.xlsx","WP Trials 2021")
     Youth_Nats =  get_youth_nats_all()
     BOL_2022 = get_bol_trials_data()
     df = pd.concat([WPFFA_2022,WPFFA_2021,Youth_Nats,BOL_2022])
