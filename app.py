@@ -9,7 +9,7 @@ st.set_page_config(page_title="Lakenvlei Catch Report Dashboard", page_icon=":ba
 # ---- READ EXCEL ----
 @st.cache
 def get_data_from_csv():
-    df = pd.read_csv('data/data.csv')
+    df = pd.read_csv('Data/data.csv')
     return df
 
 df = get_data_from_csv()
